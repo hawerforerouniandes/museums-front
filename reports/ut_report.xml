@@ -1,7 +1,30 @@
 <testExecutions version="1">
+  <file path="src/app/museum/museum-list/museum-list.component.spec.ts">
+    <testCase name="MuseumListComponent should have an img element " duration="47"/>
+    <testCase name="MuseumListComponent should create" duration="6"/>
+  </file>
+  <file path="src/app/exhibition/exhibition-detail/exhibition-detail.component.spec.ts">
+    <testCase name="ExhibitionDetailComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/museum/museum.service.spec.ts">
+    <testCase name="Service: Museum should ..." duration="2"/>
+  </file>
+  <file path="src/app/exhibition/exhibition-list/exhibition-list.component.spec.ts">
+    <testCase name="ExhibitionListComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/exhibition/exhibition-create/exhibition-create.component.spec.ts">
+    <testCase name="ExhibitionCreateComponent should create" duration="6"/>
+  </file>
+  <file path="src/app/exhibition/exhibition.service.spec.ts">
+    <testCase name="Service: Exhibition should ..." duration="1"/>
+  </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'museums-front'" duration="118"/>
-    <testCase name="AppComponent should create the app" duration="14"/>
-    <testCase name="AppComponent should render title" duration="13"/>
+    <testCase name="AppComponent should create the app" duration="7"/>
+  </file>
+  <file path="src/app/museum/museum-detail/museum-detail.component.spec.ts">
+    <testCase name="MuseumDetailComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/museum/museum-create/museum-create.component.spec.ts">
+    <testCase name="MuseumCreateComponent should create" duration="4"/>
   </file>
 </testExecutions>
