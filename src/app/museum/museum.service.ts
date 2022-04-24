@@ -15,7 +15,7 @@ private apiUrl: string = environment.baseUrl + 'museums';
 
 constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<Museum[]> {
+  getMuseums(): Observable<Museum[]> {
     return this.http.get<Museum[]>(this.apiUrl);
   }
 

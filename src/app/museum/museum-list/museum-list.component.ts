@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Museum } from '../museum';
+import { MuseumService } from '../museum.service';
+
 
 @Component({
   selector: 'app-museum-list',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuseumListComponent implements OnInit {
 
-  constructor() { }
+  museums: Array<Museum> = [];
+
+  constructor(private museumService: MuseumService) { }
+
+  getMuseums(): void {
+    this.museumService.getMuseums().subscribe((museums) => {
+      this.museums = museums;
+    });
+  }
 
   ngOnInit() {
   }
