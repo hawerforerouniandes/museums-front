@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +15,8 @@ import { MuseumModule } from './museum/museum.module';
     BrowserModule,
     AppRoutingModule,
     MuseumModule,
-    ExhibitionModule
+    ExhibitionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
