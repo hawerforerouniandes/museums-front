@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExhibitionModule } from './exhibition/exhibition.module';
 import { MuseumModule } from './museum/museum.module';
+import { ArtistModule } from './artist/artist.module';
+import { ArtworkModule } from './artwork/artwork.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { MuseumModule } from './museum/museum.module';
     AppRoutingModule,
     MuseumModule,
     ExhibitionModule,
+    ArtistModule,
+    ArtworkModule,
     HttpClientModule
   ],
   providers: [],
