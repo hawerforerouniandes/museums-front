@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 import { faker } from '@faker-js/faker';
 
 import { ArtistListComponent } from './artist-list.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ArtistService } from '../artist.service';
 
 describe('ArtistListComponent', () => {
@@ -14,7 +15,9 @@ describe('ArtistListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArtistListComponent ]
+      imports: [HttpClientModule],
+      declarations: [ ArtistListComponent ],
+      providers: [ ArtistService ]
     })
     .compileComponents();
   }));

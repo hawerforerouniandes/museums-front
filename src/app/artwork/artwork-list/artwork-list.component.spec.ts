@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ArtworkListComponent } from './artwork-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ArtworkService } from '../artwork.service';
 
 describe('ArtworkListComponent', () => {
   let component: ArtworkListComponent;
@@ -11,7 +13,9 @@ describe('ArtworkListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArtworkListComponent ]
+      imports: [HttpClientModule],
+      declarations: [ ArtworkListComponent ],
+      providers: [ ArtworkService ]
     })
     .compileComponents();
   }));
