@@ -11,7 +11,7 @@ export class Artwork {
     type: number
   ) {
     this.name = name;
-    this.year = number;
+    this.year = year;
     this.description = description
     this.type = type
   }
