@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Exhibition } from '../exhibition';
+import { ExhibitionService } from '../exhibition.service';
 
 @Component({
   selector: 'app-exhibition-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExhibitionListComponent implements OnInit {
 
-  constructor() { }
+  exhibitions: Array<Exhibition> = [];
+
+  constructor(private exhibitionService: ExhibitionService) { }
+
+  getExhibitions(museo: any): void {
+    this.exhibitionService.getExhibitions(museo).subscribe((exhibitions) => {
+      this.exhibitions = exhibitions;
+    });
+  }
 
   ngOnInit() {
+    this.getExhibitions(100);
+
   }
 
 }
