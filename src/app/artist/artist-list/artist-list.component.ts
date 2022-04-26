@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Artist } from '../Artist';
+import { Artist } from '../artist';
 import { ArtistService } from '../artist.service'
 
 @Component({

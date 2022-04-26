@@ -7,6 +7,7 @@ import { faker } from '@faker-js/faker';
 import { ArtistListComponent } from './artist-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistService } from '../artist.service';
+import { Artist } from '../artist';
 
 describe('ArtistListComponent', () => {
   let component: ArtistListComponent;
@@ -25,10 +26,29 @@ describe('ArtistListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ArtistListComponent);
     component = fixture.componentInstance;
+
+    component.artists = [
+      new Artist(
+        1,
+        `{faker.name.firstName()} {faker.name.lastName()}`,
+        faker.address.cityName(),
+        faker.date.past().toString(),
+        faker.image.imageUrl()
+        ),
+    ];
+
     fixture.detectChanges();
+    debug = fixture.debugElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have an img element ', () => {
+    expect(debug.query(By.css('img')).attributes['alt']).toEqual(
+      component.artists[0].name
+    );
+  });
+
 });
