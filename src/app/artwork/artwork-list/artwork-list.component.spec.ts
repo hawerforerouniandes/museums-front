@@ -6,10 +6,13 @@ import { DebugElement } from '@angular/core';
 import { ArtworkListComponent } from './artwork-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtworkService } from '../artwork.service';
+import { Artwork } from '../Artwork';
+import faker from '@faker-js/faker';
 
 describe('ArtworkListComponent', () => {
   let component: ArtworkListComponent;
   let fixture: ComponentFixture<ArtworkListComponent>;
+  let debug: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,10 +26,26 @@ describe('ArtworkListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ArtworkListComponent);
     component = fixture.componentInstance;
+
+    component.artworks = [
+      new Artwork(
+        faker.name.jobType(),
+        faker.date.past().getFullYear(),
+        faker.lorem.paragraph(),
+        1)
+    ];
+
     fixture.detectChanges();
+    debug = fixture.debugElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have an img element ', () => {
+    expect(debug.query(By.css('img')).attributes['alt']).toEqual(
+      component.artworks[0].name
+    );
   });
 });
