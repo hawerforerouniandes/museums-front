@@ -11,6 +11,9 @@ import { MuseumService } from '../museum.service';
 export class MuseumListComponent implements OnInit {
 
   museums: Array<Museum> = [];
+  selected: Boolean = false;
+  selectedMuseum!: number;
+
 
   constructor(private museumService: MuseumService) { }
 
@@ -22,6 +25,11 @@ export class MuseumListComponent implements OnInit {
 
   ngOnInit() {
     this.getMuseums();
+  }
+
+  onSelected(museum: number): void {
+    this.selected = true;
+    this.selectedMuseum = museum;
   }
 
 }

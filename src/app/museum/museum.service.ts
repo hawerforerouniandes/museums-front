@@ -19,4 +19,8 @@ constructor(private http: HttpClient) { }
     return this.http.get<Museum[]>(this.apiUrl);
   }
 
+  getMuseum(id:number): Observable<Museum> {
+    return this.http.get<Museum>(this.apiUrl+"/"+id);
+  }
+
 }

@@ -7,7 +7,6 @@ export class Museum {
   city: string;
   image: string;
 
-
   constructor(
     id: number,
     name: string,

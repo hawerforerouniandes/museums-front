@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { MuseumDetailComponent } from './museum-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MuseumService } from '../museum.service';
 
 describe('MuseumDetailComponent', () => {
   let component: MuseumDetailComponent;
@@ -11,7 +13,9 @@ describe('MuseumDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MuseumDetailComponent ]
+      imports: [HttpClientModule],
+      declarations: [ MuseumDetailComponent ],
+      providers: [ MuseumService ]
     })
     .compileComponents();
   }));
