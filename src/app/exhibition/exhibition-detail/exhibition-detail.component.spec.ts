@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ExhibitionDetailComponent } from './exhibition-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExhibitionService } from '../exhibition.service';
 
 describe('ExhibitionDetailComponent', () => {
   let component: ExhibitionDetailComponent;
@@ -11,7 +13,9 @@ describe('ExhibitionDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExhibitionDetailComponent ]
+      imports: [HttpClientModule],
+      declarations: [ ExhibitionDetailComponent ],
+      providers: [ ExhibitionService ]
     })
     .compileComponents();
   }));

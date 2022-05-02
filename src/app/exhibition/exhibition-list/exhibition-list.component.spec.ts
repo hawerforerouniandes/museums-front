@@ -6,14 +6,15 @@ import { DebugElement } from '@angular/core';
 import { ExhibitionListComponent } from './exhibition-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExhibitionService } from '../exhibition.service';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ExhibitionListComponent', () => {
   let component: ExhibitionListComponent;
   let fixture: ComponentFixture<ExhibitionListComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, RouterTestingModule.withRoutes([])],
       declarations: [ ExhibitionListComponent ],
       providers: [ ExhibitionService ]
     })
