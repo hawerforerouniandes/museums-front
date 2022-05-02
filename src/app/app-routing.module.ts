@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'museums',
     loadChildren: () =>
       import('./museum/museum.module').then((m) => m.MuseumModule)
+  },
+  {
+    path: 'artists',
+    loadChildren: () =>
+      import('./artist/artist.module').then((m) => m.ArtistModule)
   }
 ];
 
