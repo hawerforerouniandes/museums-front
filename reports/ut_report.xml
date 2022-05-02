@@ -1,30 +1,56 @@
 <testExecutions version="1">
-  <file path="src/app/museum/museum.service.spec.ts">
-    <testCase name="Service: Museum should ..." duration="11"/>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="32"/>
   </file>
-  <file path="src/app/museum/museum-detail/museum-detail.component.spec.ts">
-    <testCase name="MuseumDetailComponent should create" duration="20"/>
+  <file path="src/app/museum/museum.service.spec.ts">
+    <testCase name="Service: Museum should ..." duration="3"/>
   </file>
   <file path="src/app/museum/museum-list/museum-list.component.spec.ts">
-    <testCase name="MuseumListComponent should create" duration="25"/>
-    <testCase name="MuseumListComponent should have an img element " duration="14"/>
+    <testCase name="MuseumListComponent should have an img element " duration="13"/>
+    <testCase name="MuseumListComponent should create" duration="10"/>
   </file>
-  <file path="src/app/exhibition/exhibition.service.spec.ts">
-    <testCase name="Service: Exhibition should ..." duration="2"/>
+  <file path="src/app/museum/museum-detail/museum-detail.component.spec.ts">
+    <testCase name="MuseumDetailComponent should create" duration="4"/>
   </file>
   <file path="src/app/museum/museum-create/museum-create.component.spec.ts">
-    <testCase name="MuseumCreateComponent should create" duration="7"/>
+    <testCase name="MuseumCreateComponent should create" duration="6"/>
   </file>
-  <file path="src/app/exhibition/exhibition-detail/exhibition-detail.component.spec.ts">
-    <testCase name="ExhibitionDetailComponent should create" duration="6"/>
-  </file>
-  <file path="src/app/exhibition/exhibition-list/exhibition-list.component.spec.ts">
-    <testCase name="ExhibitionListComponent should create" duration="5"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="7"/>
+  <file path="src/app/artwork/artwork-list/artwork-list.component.spec.ts">
+    <testCase name="ArtworkListComponent should create" duration="9"/>
+    <testCase name="ArtworkListComponent should have an img element " duration="4"/>
   </file>
   <file path="src/app/exhibition/exhibition-create/exhibition-create.component.spec.ts">
-    <testCase name="ExhibitionCreateComponent should create" duration="4"/>
+    <testCase name="ExhibitionCreateComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/artwork/artwork-detail/artwork-detail.component.spec.ts">
+    <testCase name="ArtworkDetailComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/artwork/artwork.service.spec.ts">
+    <testCase name="Service: Artwork should ..." duration="1"/>
+  </file>
+  <file path="src/app/artist/artist-detail/artist-detail.component.spec.ts">
+    <testCase name="ArtistDetailComponent should create" duration="4"/>
+  </file>
+  <file path="src/app/exhibition/exhibition.service.spec.ts">
+    <testCase name="Service: Exhibition should ..." duration="1"/>
+  </file>
+  <file path="src/app/artist/artist-list/artist-list.component.spec.ts">
+    <testCase name="ArtistListComponent should create" duration="9"/>
+    <testCase name="ArtistListComponent should have an img element " duration="4"/>
+  </file>
+  <file path="src/app/artist/artist.service.spec.ts">
+    <testCase name="Service: Artist should ..." duration="1"/>
+  </file>
+  <file path="src/app/exhibition/exhibition-list/exhibition-list.component.spec.ts">
+    <testCase name="ExhibitionListComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/artist/artist-create/artist-create.component.spec.ts">
+    <testCase name="ArtistCreateComponent should create" duration="4"/>
+  </file>
+  <file path="src/app/artwork/artwork-create/artwork-create.component.spec.ts">
+    <testCase name="ArtworkCreateComponent should create" duration="4"/>
+  </file>
+  <file path="src/app/exhibition/exhibition-detail/exhibition-detail.component.spec.ts">
+    <testCase name="ExhibitionDetailComponent should create" duration="4"/>
   </file>
 </testExecutions>
