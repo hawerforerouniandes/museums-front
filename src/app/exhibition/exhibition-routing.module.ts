@@ -6,11 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: ExhibitionListComponent,
-  },
-  {
-    path: ':id',
-    component: ExhibitionDetailComponent
-  },
+  }
 ];
 
 @NgModule({
