@@ -1,3 +1,29 @@
-<p>
-  museum-detail works!
-</p>
+<div class="container-fluid" *ngIf="museum">
+  <p class="h3 p-3">{{ museum.name }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ museum.image }}"
+          alt="{{ museum.name }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt>Dirección</dt>
+          {{ museum.address }}
+
+        <dt>Ciudad</dt>
+        <dd>{{ museum.city }}</dd>
+        <hr />
+        <dt class="bold">Exibiciones</dt>
+        <button type="button" class="btn btn-primary">Ver</button>
+        <hr />
+        <dt class="bold">Descripción</dt>
+        <dd>{{ museum.description }}</dd>
+      </dl>
+    </div>
+  </div>
+</div>

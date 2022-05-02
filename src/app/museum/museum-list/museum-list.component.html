@@ -1,3 +1,8 @@
+<div *ngIf="selected">
+  <app-museum-detail [museumDetail]="selectedMuseum"></app-museum-detail>
+</div>
+
+<hr />
 <div class="container-fluid">
   <h2>Listado de museos</h2>
   <div class="row">
@@ -7,11 +12,11 @@
           class="card-img-top"
           src="{{ museum.image }}"
           alt="{{ museum.name }}"
+          (click)="onSelected(museum.id)"
         />
         <div class="card-body">
           <h5 class="card-title">{{ museum.name }}</h5>
           <small>{{ museum.city }} - {{ museum.address }}</small>
-          <p class="card-text">{{ museum.description | slice:0:200 }}
         </div>
       </div>
     </div>

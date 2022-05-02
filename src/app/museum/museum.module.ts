@@ -10,7 +10,7 @@ import { MuseumRoutingModule } from './museum-routing.module';
     CommonModule,
     MuseumRoutingModule
   ],
-  declarations: [MuseumListComponent]
+  declarations: [MuseumListComponent, MuseumDetailComponent]
 
 })
 export class MuseumModule { }
