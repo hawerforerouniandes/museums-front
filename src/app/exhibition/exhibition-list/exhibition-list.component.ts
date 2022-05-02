@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Exhibition } from '../exhibition';
 import { ExhibitionService } from '../exhibition.service';
 
@@ -10,8 +11,10 @@ import { ExhibitionService } from '../exhibition.service';
 export class ExhibitionListComponent implements OnInit {
 
   exhibitions: Array<Exhibition> = [];
+  idMuseum: number = 0;
 
-  constructor(private exhibitionService: ExhibitionService) { }
+  constructor(private exhibitionService: ExhibitionService,
+              private route: ActivatedRoute,) { }
 
   getExhibitions(museo: any): void {
     this.exhibitionService.getExhibitions(museo).subscribe((exhibitions) => {
@@ -20,7 +23,8 @@ export class ExhibitionListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getExhibitions(100);
+    this.idMuseum = this.route.snapshot.params['id'];
+    this.getExhibitions(this.idMuseum);
 
   }
 
