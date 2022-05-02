@@ -12,6 +12,8 @@ export class ExhibitionListComponent implements OnInit {
 
   exhibitions: Array<Exhibition> = [];
   idMuseum: number = 0;
+  selected: Boolean = false;
+  selectedExhibicion!: number;
 
   constructor(private exhibitionService: ExhibitionService,
               private route: ActivatedRoute,) { }
@@ -26,6 +28,11 @@ export class ExhibitionListComponent implements OnInit {
     this.idMuseum = this.route.snapshot.params['id'];
     this.getExhibitions(this.idMuseum);
 
+  }
+
+  onSelected(exhibition: number): void {
+    this.selected = true;
+    this.selectedExhibicion = exhibition;
   }
 
 }

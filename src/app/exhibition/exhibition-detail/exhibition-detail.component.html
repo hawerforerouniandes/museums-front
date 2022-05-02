@@ -1,3 +1,16 @@
-<p>
-  exhibition-detail works!
-</p>
+<div class="container-fluid" *ngIf="exhibition">
+  <p class="h3 p-3">{{ exhibition.name }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt class="bold">Descripción</dt>
+        <dd>{{ exhibition.description }}</dd>
+      </dl>
+    </div>
+  </div>
+</div>

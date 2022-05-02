@@ -1,12 +1,16 @@
+<div *ngIf="selected">
+  <app-exhibition-detail [exhibitionDetail]="selectedExhibicion" [museumDetail]="idMuseum"></app-exhibition-detail>
+</div>
+
+<hr />
 <div class="container-fluid">
   <h2>Listado de exhibiciones</h2>
   <div class="row">
     <div *ngFor="let exhibition of exhibitions" class="col mb-2">
-      <div class="card p-2" style="width: 15rem; height: 33rem">
+      <div class="card p-2">
 
         <div class="card-body">
-          <h5 class="card-title">{{ exhibition.name }}</h5>
-          <p class="card-text">{{ exhibition.description | slice:0:200 }}
+          <a (click)="onSelected(exhibition.id)"> <h5 class="card-title">{{ exhibition.name }}</h5> </a>
         </div>
       </div>
     </div>
