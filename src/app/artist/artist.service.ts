@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Artist } from './artist';
+import { ArtistDetail } from './artist-detail';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class ArtistService {
 
   constructor(private http: HttpClient) { }
 
-    getArtists(): Observable<Artist[]> {
+    getArtists(): Observable<ArtistDetail[]> {
       console.log(this.apiUrl)
-      return this.http.get<Artist[]>(this.apiUrl);
+      return this.http.get<ArtistDetail[]>(this.apiUrl);
     }
 
 }

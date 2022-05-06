@@ -1,15 +1,18 @@
 export class Artwork {
+  id: number;
   name: string;
   year: number;
   description: String;
-  type: number;
+  type: string;
 
   constructor(
+    id: number,
     name: string,
     year: number,
     description: string,
-    type: number
+    type: string
   ) {
+    this.id = id;
     this.name = name;
     this.year = year;
     this.description = description

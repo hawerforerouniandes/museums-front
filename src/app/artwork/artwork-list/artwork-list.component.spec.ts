@@ -29,10 +29,11 @@ describe('ArtworkListComponent', () => {
 
     component.artworks = [
       new Artwork(
+        faker.random.number(),
         faker.name.jobType(),
         faker.date.past().getFullYear(),
         faker.lorem.paragraph(),
-        1)
+        faker.lorem.word())
     ];
 
     fixture.detectChanges();
