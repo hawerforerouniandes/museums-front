@@ -48,14 +48,16 @@ describe('Service: Artist', () => {
             name: "Self portrait in the studio",
             year: 1976,
             description: "Similar to Brett Whiteley's other major paintings of this period, 'Self-portrait in the studio' exudes a sense of sumptuous living and the liquid presence of the harbour through what he called 'the ecstasy-like effect of Ultramarine blue'. Whiteley's tiny mirror self-portrait also reflects the influence of Eastern art in his portrayal of man as merely part of a larger landscape.",
-            type: "Painting"
+            type: "Painting",
+            mainImage: "https://www.bendigoregion.com.au/sites/default/files/2021-05/brett_whiteley_greg_self.jpg"
           },
           {
             id: 100,
             name: "Dogs",
             year: 1975,
             description: "Brett Whiteley felt deeply connected to animals since childhood. In fact, between 1965 and 1988 he staged four exhibitions whose predominant or exclusive subject was animals that he had observed in zoos, domestic environments and in nature.",
-            type: "Painting"
+            type: "Painting",
+            mainImage: "https://www.bendigoregion.com.au/sites/default/files/2021-05/brett_whiteley_greg_self.jpg"
           }
         ]
       }

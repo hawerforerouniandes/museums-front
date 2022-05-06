@@ -1,9 +1,9 @@
 export class ArtistMovement {
   constructor(
-    id: number,
-    name: string,
-    description: string,
-    countryOfOrigin: string,
-    activeYears: string
+    public id: number,
+    public name: string,
+    public description: string,
+    public countryOfOrigin: string,
+    public activeYears: string
   ) {}
 }

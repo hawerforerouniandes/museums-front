@@ -33,7 +33,9 @@ describe('ArtworkListComponent', () => {
         faker.name.jobType(),
         faker.date.past().getFullYear(),
         faker.lorem.paragraph(),
-        faker.lorem.word())
+        faker.lorem.word(),
+        faker.image.abstract()
+      )
     ];
 
     fixture.detectChanges();

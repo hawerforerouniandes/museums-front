@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from '../artist';
+import { ArtistDetail } from '../artist-detail';
 import { ArtistService } from '../artist.service'
 
 @Component({
@@ -9,7 +10,8 @@ import { ArtistService } from '../artist.service'
 })
 export class ArtistListComponent implements OnInit {
 
-  artists: Array<Artist> = []
+  artists: Array<ArtistDetail> = []
+  selectedArtist?: ArtistDetail;
 
   constructor(private artistService: ArtistService) { }
 
@@ -21,6 +23,11 @@ export class ArtistListComponent implements OnInit {
 
   ngOnInit() {
     this.getArtists();
+  }
+
+  onSelected(artist: ArtistDetail): void {
+    document.body.style.height = '100vh';
+    this.selectedArtist = artist;
   }
 
 }

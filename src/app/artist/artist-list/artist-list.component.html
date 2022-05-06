@@ -1,18 +1,37 @@
-<div class="container-fluid">
-  <h2>Listado de artistas</h2>
-  <div class="row">
-    <div class="col mb-2" *ngFor="let artist of artists">
-          <div class="card p-2" style="width: 15rem; height: 33rem">
-              <img
-                class="card-img-top"
-                src="{{ artist.image }}"
-                alt="{{ artist.name }}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{ artist.name }}</h5>
-                  <p class="card-text">[{{ artist.birthplace }}]</p>
-              </div>
-           </div>
-      </div>
-   </div>
+<div class="container-fluid" [ngClass]="selectedArtist ? '': 'col mb-2'">
+    <h2>Listado de artistas</h2>
+    <div class="row">
+        <ng-container *ngIf="selectedArtist; then selectedArtistLayout; else notSelectedArtistLayout">
+        </ng-container>
+
+        <ng-template #selectedArtistLayout>
+            <div class="col-md-3 col-sm-12 col-xs-12 scrollable">
+                <div class="content">
+                    <div class=" " *ngFor="let artist of artists ">
+                        <div class="card p-2 " style="width: 15rem; height: 33rem ">
+                            <img class="card-img-top " src="{{ artist.image }} " alt="{{ artist.name }} " (click)="onSelected(artist) " />
+                            <div class="card-body ">
+                                <h5 class="card-title ">{{ artist.name }}</h5>
+                                <p class="card-text ">[{{ artist.birthplace }}]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <app-artist-detail [artistDetail]="selectedArtist "></app-artist-detail>
+            </div>
+        </ng-template>
+        <ng-template #notSelectedArtistLayout>
+            <div [ngClass]="selectedArtist ? '': 'col mb-2' " class=" " *ngFor="let artist of artists ">
+                <div class="card p-2 " style="width: 15rem; height: 33rem ">
+                    <img class="card-img-top " src="{{ artist.image }} " alt="{{ artist.name }} " (click)="onSelected(artist) " />
+                    <div class="card-body ">
+                        <h5 class="card-title ">{{ artist.name }}</h5>
+                        <p class="card-text ">[{{ artist.birthplace }}]</p>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
 </div>
