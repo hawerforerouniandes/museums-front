@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Artwork } from '../Artwork';
 import { ArtworkService } from '../artwork.service';
 
@@ -10,7 +10,8 @@ import { ArtworkService } from '../artwork.service';
   styleUrls: ['./artwork-list.component.css']
 })
 export class ArtworkListComponent implements OnInit {
-  artworks: Array<Artwork> = [];
+
+  @Input() artworks?: Array<Artwork> = [];
 
   constructor(private artworkService: ArtworkService) { }
 
