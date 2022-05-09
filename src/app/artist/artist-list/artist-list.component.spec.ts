@@ -8,6 +8,7 @@ import { ArtistListComponent } from './artist-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistService } from '../artist.service';
 import { Artist } from '../artist';
+import { ArtistDetail } from '../artist-detail';
 
 describe('ArtistListComponent', () => {
   let component: ArtistListComponent;
@@ -28,27 +29,29 @@ describe('ArtistListComponent', () => {
     component = fixture.componentInstance;
 
     component.artists = [
-      new Artist(
+      new ArtistDetail(
         1,
-        `{faker.name.firstName()} {faker.name.lastName()}`,
+        `${faker.name.firstName()} ${faker.name.lastName()}`,
         faker.address.cityName(),
         faker.date.past().toString(),
-        faker.image.imageUrl()
-        ),
-    ];
+        faker.image.imageUrl(),
+        [],
+        []
+        )
+      ];
 
-    fixture.detectChanges();
-    debug = fixture.debugElement;
-  });
+      fixture.detectChanges();
+      debug = fixture.debugElement;
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
 
-  it('should have an img element ', () => {
-    expect(debug.query(By.css('img')).attributes['alt']).toEqual(
-      component.artists[0].name
-    );
-  });
+    it('should have an img element ', () => {
+      expect(debug.query(By.css('img')).attributes['alt']).toEqual(
+        component.artists[0].name
+        );
+      });
 
-});
+    });

@@ -1,3 +1,27 @@
-<p>
-  artist-detail works!
-</p>
+<div class="row">
+    <div class="col">
+        <h1>{{artistDetail?.name}}</h1>
+        <img src="{{ artistDetail?.image }}" alt="{{artistDetail?.name}} image">
+    </div>
+    <div class="col">
+        <h3>
+            Lugar de nacimiento
+        </h3>
+        <p>{{artistDetail?.birthplace}}</p>
+        <h3>
+            Fecha de nacimiento
+        </h3>
+        <p>{{artistDetail?.birthdate}}</p>
+        <h3>Movimientos</h3>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let movement of artistDetail?.movements">
+                {{movement.name}}
+                <i class="fa fa-chevron-right"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+<h3>
+    Obras
+</h3>
+<app-artwork-list [artworks]="artistDetail?.artworks"></app-artwork-list>
