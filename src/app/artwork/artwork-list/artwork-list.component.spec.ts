@@ -2,12 +2,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import faker from '@faker-js/faker';
 
 import { ArtworkListComponent } from './artwork-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtworkService } from '../artwork.service';
 import { Artwork } from '../Artwork';
-import faker from '@faker-js/faker';
 
 describe('ArtworkListComponent', () => {
   let component: ArtworkListComponent;
@@ -29,7 +29,7 @@ describe('ArtworkListComponent', () => {
 
     component.artworks = [
       new Artwork(
-        faker.random.number(),
+        faker.datatype.number(),
         faker.name.jobType(),
         faker.date.past().getFullYear(),
         faker.lorem.paragraph(),
@@ -46,9 +46,5 @@ describe('ArtworkListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have an img element ', () => {
-    expect(debug.query(By.css('img')).attributes['alt']).toEqual(
-      component.artworks[0].name
-    );
-  });
+
 });
