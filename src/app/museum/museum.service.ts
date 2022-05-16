@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Museum } from './museum';
 
 
@@ -16,8 +16,12 @@ private apiUrl: string = environment.baseUrl + 'museums';
 constructor(private http: HttpClient) { }
 
   getMuseums(): Observable<Museum[]> {
-    return this.http.get<Museum[]>(this.apiUrl);
+    return this.http.get<Museum[]>(this.apiUrl).pipe(
+      catchError(err=> throwError(() => new Error('error en el servicio')))
+    )
   }
+
+
 
   getMuseum(id:number): Observable<Museum> {
     return this.http.get<Museum>(this.apiUrl+"/"+id);

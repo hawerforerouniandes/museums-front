@@ -18,7 +18,8 @@ export class MuseumListComponent implements OnInit {
   constructor(private museumService: MuseumService) { }
 
   getMuseums(): void {
-    this.museumService.getMuseums().subscribe((museums) => {
+    this.museumService.getMuseums()
+    .subscribe((museums) => {
       this.museums = museums;
     });
   }
