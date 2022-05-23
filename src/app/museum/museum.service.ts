@@ -21,10 +21,12 @@ constructor(private http: HttpClient) { }
     )
   }
 
-
-
   getMuseum(id:number): Observable<Museum> {
     return this.http.get<Museum>(this.apiUrl+"/"+id);
+  }
+
+  createMuseum(museum: Museum): Observable<Museum> {
+    return this.http.post<Museum>(this.apiUrl, museum);
   }
 
 }
