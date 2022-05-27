@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ExhibitionCreateComponent } from './exhibition-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ExhibitionCreateComponent', () => {
   let component: ExhibitionCreateComponent;
@@ -11,6 +15,7 @@ describe('ExhibitionCreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule, ToastrModule.forRoot(), HttpClientModule, RouterTestingModule],
       declarations: [ ExhibitionCreateComponent ]
     })
     .compileComponents();

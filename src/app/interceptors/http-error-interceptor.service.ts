@@ -18,7 +18,6 @@ import {
         catchError((httpErrorResponse: HttpErrorResponse) => {
           let errorMesagge = '';
           let errorType = '';
-
           if (httpErrorResponse.error instanceof ErrorEvent) {
             errorType = "Client side error"
             errorMesagge = httpErrorResponse.error.error;
@@ -27,7 +26,7 @@ import {
             if (httpErrorResponse.status === 0) {
               errorMesagge = "No hay conexión con el servidor";
             } else {
-              errorMesagge = `${httpErrorResponse.status}: ${httpErrorResponse.error.error}`;
+              errorMesagge = `${httpErrorResponse.status}: ${httpErrorResponse.error.message}`;
             }
             this.toastrService.error(errorMesagge, errorType, { closeButton: true });
           }

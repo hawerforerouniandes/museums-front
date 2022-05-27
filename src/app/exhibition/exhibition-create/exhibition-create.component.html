@@ -1,3 +1,105 @@
-<p>
-  exhibition-create works!
-</p>
+<!-- Modal -->
+<div>
+  <div class="modal-dialog">
+    <form [formGroup]="exhibitionForm" (ngSubmit)="!exhibitionForm.invalid && createExhibition(exhibitionForm.value)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create a new exhibition</h5>
+      </div>
+      <div class="modal-body">
+          <!--Name-->
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="name">Name</label>
+            <input
+              novalidate
+              id="name"
+              class="form-control"
+              formControlName="name"
+              placeholder="Author's name"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="
+                exhibitionForm.get('name')!.hasError('required') &&
+                exhibitionForm.get('name')!.touched
+              "
+            >
+              Name required
+            </div>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="exhibitionForm.get('name')!.hasError('minlength')"
+            >
+              Name too short
+            </div>
+          </div>
+
+            <!--Description-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="description">Description</label>
+              <input
+                novalidate
+                id="description"
+                class="form-control"
+                formControlName="description"
+                placeholder="Author's short description"
+              />
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                  exhibitionForm.get('description')!.hasError('required') &&
+                  exhibitionForm.get('description')!.touched
+                "
+              >
+                Description required
+              </div>
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="exhibitionForm.get('description')!.hasError('maxlength')"
+              >
+                Description too long
+              </div>
+            </div>
+
+            <!--sponsor-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="description">Sponsor</label>
+              <select formControlName="sponsor" class="form-control" >
+                <option *ngFor="let sponsor of sponsors" [ngValue]="sponsor">
+                  {{ sponsor.name }}
+                </option>
+              </select>
+
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                  exhibitionForm.get('sponsor')!.hasError('required') &&
+                  exhibitionForm.get('sponsor')!.touched
+                "
+              >
+                Sponsor required
+              </div>
+            </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="cancelCreation()">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!exhibitionForm.valid">
+          Create
+        </button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+

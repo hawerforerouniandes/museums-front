@@ -16,7 +16,7 @@ export class ExhibitionListComponent implements OnInit {
   selectedExhibicion!: number;
 
   constructor(private exhibitionService: ExhibitionService,
-              private route: ActivatedRoute,) { }
+              private route: ActivatedRoute) { }
 
   getExhibitions(museo: any): void {
     this.exhibitionService.getExhibitions(museo).subscribe((exhibitions) => {

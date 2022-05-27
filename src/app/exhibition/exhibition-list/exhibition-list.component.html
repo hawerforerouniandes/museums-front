@@ -2,9 +2,16 @@
   <app-exhibition-detail [exhibitionDetail]="selectedExhibicion" [museumDetail]="idMuseum"></app-exhibition-detail>
 </div>
 
-<hr />
 <div class="container-fluid">
-  <h2>Listado de exhibiciones</h2>
+  <hr />
+  <h2>Exhibition list</h2>
+  <hr />
+  <div class="row">
+    <div class="col-md-offset-10 col-md-12">
+      <a class="btn btn-primary" href="museums/{{ idMuseum }}/exhibitions/create">New exhibit</a>&nbsp;
+    </div>
+  </div>
+  <br>
   <div class="row">
     <div *ngFor="let exhibition of exhibitions" class="col mb-2">
       <div class="card p-2">
