@@ -1,0 +1,103 @@
+<!-- Modal -->
+<div>
+  <div class="modal-dialog">
+    <form [formGroup]="sponsorForm" (ngSubmit)="!sponsorForm.invalid && createSponsor(sponsorForm.value)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create new sponsor</h5>
+      </div>
+      <div class="modal-body">
+          <!--Name-->
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="name">Name</label>
+            <input
+              novalidate
+              id="name"
+              class="form-control"
+              formControlName="name"
+              placeholder="Author's name"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="
+              sponsorForm.get('name')!.hasError('required') &&
+              sponsorForm.get('name')!.touched
+              "
+            >
+              Name required
+            </div>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="sponsorForm.get('name')!.hasError('minlength')"
+            >
+              Name too short
+            </div>
+          </div>
+
+            <!--Description-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="description">Description</label>
+              <input
+                novalidate
+                id="description"
+                class="form-control"
+                formControlName="description"
+                placeholder="Author's short description"
+              />
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                sponsorForm.get('description')!.hasError('required') &&
+                sponsorForm.get('description')!.touched
+                "
+              >
+                Description required
+              </div>
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="sponsorForm.get('description')!.hasError('maxlength')"
+              >
+                Description too long
+              </div>
+            </div>
+
+            <!--website-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="address">Website</label>
+              <input
+                novalidate
+                id="website"
+                class="form-control"
+                formControlName="website"
+                placeholder="website"
+              />
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                  sponsorForm.get('website')!.hasError('required') &&
+                  sponsorForm.get('website')!.touched
+                "
+              >
+                Website required
+              </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="cancelCreation()">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!sponsorForm.valid">
+          Create
+        </button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
