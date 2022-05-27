@@ -11,6 +11,7 @@ import { ArtworkModule } from './artwork/artwork.module';
 import { HttpErrorInterceptorService } from './interceptors/http-error-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SponsorModule } from './sponsor/sponsor.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ExhibitionModule,
     ArtistModule,
     ArtworkModule,
+    SponsorModule,
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule

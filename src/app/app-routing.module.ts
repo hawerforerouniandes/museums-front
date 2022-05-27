@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'artists',
     loadChildren: () =>
       import('./artist/artist.module').then((m) => m.ArtistModule)
+  },
+  {
+    path: 'sponsors',
+    loadChildren: () =>
+      import('./sponsor/sponsor.module').then((m) => m.SponsorModule)
   }
 ];
 
