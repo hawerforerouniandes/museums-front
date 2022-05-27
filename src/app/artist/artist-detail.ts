@@ -1,5 +1,5 @@
 import { Artwork } from "../artwork/Artwork";
-import { Artist } from "./artist";
+import { Artist } from "./Artist";
 import { ArtistMovement } from "./artist-movement";
 
 export class ArtistDetail extends Artist{

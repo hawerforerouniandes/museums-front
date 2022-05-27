@@ -7,7 +7,7 @@ import { faker } from '@faker-js/faker';
 import { ArtistListComponent } from './artist-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtistService } from '../artist.service';
-import { Artist } from '../artist';
+import { Artist } from '../Artist';
 import { ArtistDetail } from '../artist-detail';
 
 describe('ArtistListComponent', () => {
