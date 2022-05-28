@@ -47,7 +47,9 @@
           },
           "configurations": {
             "es": {
-              "localize": ["es"],
+              "localize": [
+                "es"
+              ],
               "outputPath": "dist/museums-front-es/",
               "i18nMissingTranslation": "error"
             },
@@ -119,6 +121,37 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "museums-front:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "museums-front:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "museums-front:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "museums-front:serve:production"
+            }
           }
         }
       }
