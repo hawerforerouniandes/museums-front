@@ -12,6 +12,7 @@ import { HttpErrorInterceptorService } from './interceptors/http-error-intercept
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SponsorModule } from './sponsor/sponsor.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SponsorModule } from './sponsor/sponsor.module';
     SponsorModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [
     {

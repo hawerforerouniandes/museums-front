@@ -6,6 +6,8 @@ import { DebugElement } from '@angular/core';
 import { ExhibitionDetailComponent } from './exhibition-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExhibitionService } from '../exhibition.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('ExhibitionDetailComponent', () => {
   let component: ExhibitionDetailComponent;
@@ -13,7 +15,7 @@ describe('ExhibitionDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [ReactiveFormsModule, ToastrModule.forRoot(), HttpClientModule],
       declarations: [ ExhibitionDetailComponent ],
       providers: [ ExhibitionService ]
     })

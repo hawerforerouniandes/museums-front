@@ -9,7 +9,7 @@ import { Artwork } from './Artwork';
   providedIn: 'root'
 })
 export class ArtworkService {
-  private apiUrl: string = environment.baseUrl + 'artwork';
+  private apiUrl: string = environment.baseUrl + 'artworks';
   constructor(private http: HttpClient) { }
 
   getArtworks(): Observable<Artwork[]> {
