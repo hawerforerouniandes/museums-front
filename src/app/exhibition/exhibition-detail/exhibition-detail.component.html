@@ -11,6 +11,24 @@
                 <dt class="bold">Descripción</dt>
                 <dd>{{ exhibition.description }}</dd>
             </dl>
+            <dl>
+              <dt class="bold">Artworkws</dt>
+              <dd>
+                <div *ngFor="let artwork of exhibition.artworks" class="col mb-2" style="display: inline-block;">
+                  <div class="card p-2" style="width: 15rem;">
+                    <img
+                      class="card-img-top pointer"
+                      src="{{ artwork.mainImage }}"
+                      alt="{{ artwork.name }}"
+                    />
+                    <div class="card-body">
+                      <label class="card-title">{{ artwork.name }}</label>
+                    </div>
+                  </div>
+                </div>
+              </dd>
+          </dl>
+
         </div>
     </div>
 </div>
