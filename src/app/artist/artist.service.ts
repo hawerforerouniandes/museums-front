@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Artwork } from '../artwork/Artwork';
+import { Artist } from './Artist';
 import { ArtistDetail } from './artist-detail';
 
 @Injectable({
@@ -28,6 +29,10 @@ export class ArtistService {
     console.log(this.apiUrl)
     let urn = "/"+artistId+"/artworks/"
     return this.http.get<Artwork[]>(this.apiUrl+urn);
+  }
+
+  create(artist: Artist): Observable<Artist>{
+    return this.http.post<Artist>(this.apiUrl, artist)
   }
 
 }
