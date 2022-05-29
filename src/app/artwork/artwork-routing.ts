@@ -5,7 +5,6 @@ import { ArtworkDetailComponent } from './artwork-detail/artwork-detail.componen
 import { ArtworkListComponent } from './artwork-list/artwork-list.component';
 
 const routes: Routes = [
-
   {
     path: ':id',
     component: ArtworkDetailComponent
@@ -22,4 +21,3 @@ const routes: Routes = [
 })
 
 export class ArtworkRoutingRoutes {}
-//export const ArtworkRoutingRoutes = RouterModule.forChild(routes);

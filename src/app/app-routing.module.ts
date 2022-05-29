@@ -23,6 +23,11 @@ const routes: Routes = [
       import('./sponsor/sponsor.module').then((m) => m.SponsorModule)
   },
   {
+    path: 'artworks',
+    loadChildren: () =>
+      import('./artwork/artwork.module').then((m) => m.ArtworkModule)
+  },
+  {
     path: 'movements',
     loadChildren: () =>
       import('./movement/movement.module').then((m) => m.MovementModule)

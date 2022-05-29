@@ -14,15 +14,20 @@ export class ArtistService {
 
   constructor(private http: HttpClient) { }
 
-    getArtists(): Observable<ArtistDetail[]> {
-      console.log(this.apiUrl)
-      return this.http.get<ArtistDetail[]>(this.apiUrl);
-    }
+  getArtist(id: String) {
+    let urn = "/"+id
+    return this.http.get<ArtistDetail>(this.apiUrl+urn);
+  }
 
-    getArtworks(artist: any): Observable<Artwork[]> {
-      console.log(this.apiUrl)
-      let urn = "/"+artist+"/artworks/"
-      return this.http.get<Artwork[]>(this.apiUrl+urn);
-    }
+  getArtists(): Observable<ArtistDetail[]> {
+    console.log(this.apiUrl)
+    return this.http.get<ArtistDetail[]>(this.apiUrl);
+  }
+
+  getArtworks(artistId: any): Observable<Artwork[]> {
+    console.log(this.apiUrl)
+    let urn = "/"+artistId+"/artworks/"
+    return this.http.get<Artwork[]>(this.apiUrl+urn);
+  }
 
 }
