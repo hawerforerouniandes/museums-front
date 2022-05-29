@@ -13,7 +13,7 @@
         </h3>
         <p>{{artworkDetail?.description}}</p>
         <a *ngIf="artistId" class="btn btn-primary" routerLink="/artists/{{ artistId }}">Detalles de artista</a>
-        <h3>Imagenes</h3>
+        <h3>Imagenes <a class="btn btn-primary" routerLink="/artists/{{ artistId }}/artworks/{{ artworkDetail?.id }}/images">Agregar</a></h3>
         <app-image-list [images]="artworkImages"></app-image-list>
         <br/>
     </div>
