@@ -1,3 +1,7 @@
-<p>
-  image-list works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let image of images">
+            <img src="{{ image.source }}" alt="{{ image.altText }}" class="img-thumbnail" (click)="onSelected(image)">
+        </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SponsorModule } from './sponsor/sponsor.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImageModule } from './image/image.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ExhibitionModule,
     ArtistModule,
     ArtworkModule,
+    ImageModule,
     SponsorModule,
     HttpClientModule,
     ToastrModule.forRoot(),

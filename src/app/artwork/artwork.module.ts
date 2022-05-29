@@ -6,11 +6,13 @@ import { ArtworkDetailComponent } from './artwork-detail/artwork-detail.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArtworkCreateComponent } from './artwork-create/artwork-create.component';
 import { RouterModule } from '@angular/router';
+import { ImageModule } from '../image/image.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ArtworkRoutingRoutes,
+    ImageModule,
     RouterModule,
     ReactiveFormsModule
   ],

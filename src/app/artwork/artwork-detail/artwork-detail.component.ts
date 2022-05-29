@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Artwork } from '../Artwork';
+import { ArtworkDetail } from '../artwork-detail';
 import { ArtworkService } from '../artwork.service';
 
 @Component({
@@ -10,26 +11,34 @@ import { ArtworkService } from '../artwork.service';
 })
 export class ArtworkDetailComponent implements OnInit {
 
-  @Input() artworkDetail?: Artwork;
-  @Input() artistId?: number;
-  artworkId?: String;
+  @Input() artworkId?: number;
+
+  artworkDetail?: ArtworkDetail;
+
+  get artistId() {
+    return this.artworkDetail?.artist.id
+  }
+
+  get artworkImages() {
+    return this.artworkDetail?.images ?? []
+  }
 
   constructor(
     private route: ActivatedRoute,
     private artworkService: ArtworkService
   ) { }
 
-  getArtwork(id: String) {
+  getArtwork(id: number) {
     this.artworkService.getArtwork(id).subscribe((artworkDetail) => {
       this.artworkDetail = artworkDetail
     });
   }
 
   ngOnInit() {
-    if(this.artworkDetail === undefined){
+    if(this.artworkId === undefined){
       this.artworkId = this.route.snapshot.params['id'];
-      this.getArtwork(this.artworkId!);
     }
+    this.getArtwork(this.artworkId!);
   }
 
 }

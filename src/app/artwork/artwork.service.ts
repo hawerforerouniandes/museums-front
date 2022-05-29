@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Artwork } from './Artwork';
+import { ArtworkDetail } from './artwork-detail';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class ArtworkService {
     return this.http.get<Artwork[]>(this.apiUrl);
   }
 
-  getArtwork(id: String): Observable<Artwork> {
+  getArtwork(id: number): Observable<ArtworkDetail> {
     let url = `${this.apiUrl}/${id}`;
-    return this.http.get<Artwork>(url);
+    return this.http.get<ArtworkDetail>(url);
   }
 }

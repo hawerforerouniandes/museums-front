@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Artist } from '../Artist';
 import { ArtistDetail } from '../artist-detail';
 import { ArtistService } from '../artist.service'
 

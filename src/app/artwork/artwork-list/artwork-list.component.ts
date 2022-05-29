@@ -18,6 +18,10 @@ export class ArtworkListComponent implements OnInit {
               private artistService: ArtistService,
               private route: ActivatedRoute) {}
 
+  get selectedArtworkId() {
+    return this.selectedArtwork!.id
+  }
+
 
   getArtworks(artist: any): void {
     this.artistService.getArtworks(artist).subscribe((artworks) => {

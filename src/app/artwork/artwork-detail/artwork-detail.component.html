@@ -14,12 +14,7 @@
         <p>{{artworkDetail?.description}}</p>
         <a *ngIf="artistId" class="btn btn-primary" routerLink="/artists/{{ artistId }}">Detalles de artista</a>
         <h3>Imagenes</h3>
-        <!-- <ul class="list-group">
-            <li class="list-group-item" *ngFor="let movement of artworkDetail?.movements">
-                {{movement.name}}
-                <em class="fa fa-chevron-right"></em>
-            </li>
-        </ul> -->
+        <app-image-list [images]="artworkImages"></app-image-list>
         <br/>
     </div>
 </div>

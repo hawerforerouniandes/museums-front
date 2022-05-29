@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ArtworkImage } from '../artwork-image';
+import { ArtworkImageService } from '../artwork-image.service';
 
 @Component({
   selector: 'app-image-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageListComponent implements OnInit {
 
-  constructor() { }
+  @Input() artworkId!: number;
+  @Input() artistId!: number;
+  @Input() images: ArtworkImage[] = []
 
+  constructor(
+    private artworkImageService: ArtworkImageService
+  ) { }
+
+  getImages(artistId: number, artworkId: number) {
+    this.artworkImageService.imagesForArtwork(artistId, artworkId).subscribe((images) => {
+      this.images = images
+    });
+  }
   ngOnInit() {
+    if (this.artworkId != undefined && this.artistId) {
+      this.getImages(this.artistId, this.artworkId);
+    }
   }
 
+  onSelected(image: ArtworkImage): void {
+    window.open(image.source);
+  }
 }
