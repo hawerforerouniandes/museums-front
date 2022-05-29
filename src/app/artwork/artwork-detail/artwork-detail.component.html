@@ -1,3 +1,25 @@
-<p>
-    artwork-detail works!
-</p>
+<div class="row">
+    <div class="col">
+        <h1>{{artworkDetail?.name}}</h1>
+        <img src="{{ artworkDetail?.mainImage }}" alt="{{artworkDetail?.name}} image">
+    </div>
+    <div class="col">
+        <h3>
+            Año
+        </h3>
+        <p>{{artworkDetail?.year}}</p>
+        <h3>
+            Descripción
+        </h3>
+        <p>{{artworkDetail?.description}}</p>
+        <a *ngIf="artistId" class="btn btn-primary" routerLink="/artists/{{ artistId }}">Detalles de artista</a>
+        <h3>Imagenes</h3>
+        <!-- <ul class="list-group">
+            <li class="list-group-item" *ngFor="let movement of artworkDetail?.movements">
+                {{movement.name}}
+                <em class="fa fa-chevron-right"></em>
+            </li>
+        </ul> -->
+        <br/>
+    </div>
+</div>

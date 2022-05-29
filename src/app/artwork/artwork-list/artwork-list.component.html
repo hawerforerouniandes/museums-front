@@ -1,14 +1,35 @@
-<div class="container-fluid">
-  <h2>Listado de obras de arte</h2>
+<div class="container-fluid" [ngClass]="selectedArtwork ? '': 'col mb-2'">
+    <h2>Listado de obras de arte</h2>
     <div class="row">
-        <div class="col mb-2" *ngFor="let artwork of artworks">
-            <div class="card p-2" style="width: 15rem; height: 33rem">
-                <img class="card-img-top" src="{{ artwork.mainImage }}" alt="{{ artwork.name }}" />
-                <div class="card-body">
-                    <h5 class="card-title">{{ artwork.name }}</h5>
-                    <p class="card-text text-truncate">{{ artwork.description }}</p>
+        <ng-container *ngIf="selectedArtwork; then selectedArtworkLayout; else notSelectedArtworkLayout">
+        </ng-container>
+        <ng-template #selectedArtworkLayout>
+            <div class="col-md-3 col-sm-12 col-xs-12 scrollable">
+                <div class="content">
+                    <div class=" " *ngFor="let artwork of artworks ">
+                        <div class="card p-2" style="width: 12rem; height: 10rem">
+                            <img class="thumbnail" src="{{ artwork.mainImage }} " alt="{{ artwork.name }} " (click)="onSelected(artwork) " />
+                            <div class="card-body">
+                                <h5 class="card-title">{{ artwork.name }}</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col ">
+                <app-artwork-detail [artworkDetail]="selectedArtwork" [artistId]="artistId"></app-artwork-detail>
+            </div>
+        </ng-template>
+        <ng-template #notSelectedArtworkLayout>
+            <div [ngClass]="selectedArtwork ? '': 'col mb-2' " class=" " *ngFor="let artwork of artworks ">
+                <div class="card p-2 " style="width: 15rem; height: 33rem ">
+                    <img class="card-img-top " src="{{ artwork.mainImage }} " alt="{{ artwork.name }}" (click)="onSelected(artwork) " />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artwork.name }}</h5>
+                        <p class="card-text text-truncate">{{ artwork.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
     </div>
 </div>

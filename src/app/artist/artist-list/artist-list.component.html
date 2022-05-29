@@ -8,11 +8,10 @@
             <div class="col-md-3 col-sm-12 col-xs-12 scrollable">
                 <div class="content">
                     <div class=" " *ngFor="let artist of artists ">
-                        <div class="card p-2 " style="width: 15rem; height: 33rem ">
-                            <img class="card-img-top " src="{{ artist.image }} " alt="{{ artist.name }} " (click)="onSelected(artist) " />
+                        <div class="card p-2" style="width: 14rem; height: 12rem">
+                            <img class="thumbnail" src="{{ artist.image }} " alt="{{ artist.name }} " (click)="onSelected(artist) " />
                             <div class="card-body ">
                                 <h5 class="card-title ">{{ artist.name }}</h5>
-                                <p class="card-text ">[{{ artist.birthplace }}]</p>
                             </div>
                         </div>
                     </div>

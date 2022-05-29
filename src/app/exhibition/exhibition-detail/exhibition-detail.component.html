@@ -12,77 +12,63 @@
                 <dd>{{ exhibition.description }}</dd>
             </dl>
             <dl>
-              <dt class="bold">Artworkws</dt>
-              <dt>
+                <dt class="bold">Artworkws</dt>
+                <dt>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="openModal()">
                   Add atwork
                 </button>
               </dt>
-              <br />
-              <dd>
-                  <div *ngFor="let artwork of exhibition.artworks" class="col mb-2" style="display: inline-block;">
-                    <div class="card p-2" style="width: 15rem;">
-                      <img
-                        class="card-img-top pointer"
-                        src="{{ artwork.mainImage }}"
-                        alt="{{ artwork.name }}"
-                      />
-                      <div class="card-body">
-                        <label class="card-title">{{ artwork.name }}</label>
-                      </div>
+                <br />
+                <dd>
+                    <div *ngFor="let artwork of exhibition.artworks" class="col mb-2" style="display: inline-block;">
+                        <div class="card p-2" style="width: 15rem;" routerLink="/artworks/{{ artwork.id }}">
+                            <img class="card-img-top pointer" src="{{ artwork.mainImage }}" alt="{{ artwork.name }}" />
+                            <div class="card-body">
+                                <label class="card-title">{{ artwork.name }}</label>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-              </dd>
-          </dl>
+                </dd>
+            </dl>
 
         </div>
     </div>
 </div>
 
 <ng-template #modalInfo let-modal>
-  <form [formGroup]="artworkForm" (ngSubmit)="!artworkForm.invalid && addArtwork(artworkForm.value)">
-   <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.close()"></button>
-      </div>
-      <div class="modal-body">
-        <!--artwork-->
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="description">Artwork</label>
-          <select formControlName="artwork" class="form-control" >
+    <form [formGroup]="artworkForm" (ngSubmit)="!artworkForm.invalid && addArtwork(artworkForm.value)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.close()"></button>
+            </div>
+            <div class="modal-body">
+                <!--artwork-->
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="description">Artwork</label>
+                    <select formControlName="artwork" class="form-control">
             <option *ngFor="let artwork of artworks" [ngValue]="artwork.id">
               {{ artwork.name }}
             </option>
           </select>
 
-          <div
-            class="alert alert-danger alert-dismissible fade show"
-            *ngIf="
+                    <div class="alert alert-danger alert-dismissible fade show" *ngIf="
               artworkForm.get('artwork')!.hasError('required') &&
               artworkForm.get('artwork')!.touched
-            "
-          >
-           Artwork required
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-danger"
-          (click)="modal.close()">
+            ">
+                        Artwork required
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="modal.close()">
           Cancel
         </button>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          [disabled]="!artworkForm.valid">
+                <button type="submit" class="btn btn-primary" [disabled]="!artworkForm.valid">
           Create
         </button>
-      </div>
-    </div>
-  </form>
+            </div>
+        </div>
+    </form>
 </ng-template>
-

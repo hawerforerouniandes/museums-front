@@ -6,6 +6,8 @@ import { DebugElement } from '@angular/core';
 import { ArtistDetailComponent } from './artist-detail.component';
 import faker from '@faker-js/faker';
 import { ArtistDetail } from '../artist-detail';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ArtistDetailComponent', () => {
   let component: ArtistDetailComponent;
@@ -14,6 +16,10 @@ describe('ArtistDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        RouterTestingModule
+      ],
       declarations: [ ArtistDetailComponent ]
     })
     .compileComponents();

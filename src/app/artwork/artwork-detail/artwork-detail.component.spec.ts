@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ArtworkDetailComponent } from './artwork-detail.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ArtworkDetailComponent', () => {
   let component: ArtworkDetailComponent;
@@ -11,6 +13,10 @@ describe('ArtworkDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+       ],
       declarations: [ ArtworkDetailComponent ]
     })
     .compileComponents();
