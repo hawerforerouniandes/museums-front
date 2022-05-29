@@ -1,5 +1,5 @@
 
-describe('My First Test', () => {
+describe('New museum Test', () => {
   it('Visits the initial project page', () => {
 
     //Home
