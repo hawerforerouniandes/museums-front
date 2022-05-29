@@ -1,0 +1,35 @@
+<main>
+
+  <div class="container-fluid">
+    <hr />
+    <h1>Movements list</h1>
+    <hr />
+    <div class="row">
+      <div class="col-md-offset-10 col-md-12">
+        <a class="btn btn-primary" [routerLink]="['/movements/create']">New movement</a>&nbsp;
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <table class='table table-striped' *ngIf="movements" alt="Table movements">
+        <caption>Table movements</caption>
+        <thead>
+          <tr>
+            <th id="name">Name</th>
+            <th id="description">Description</th>
+            <th id="countryOfOrigin">Country of origin</th>
+            <th id="activeYears">Active years</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movement of movements">
+            <td>{{ movement.name }}</td>
+            <td>{{ movement.description }}</td>
+            <td>{{ movement.countryOfOrigin }}</td>
+            <td>{{ movement.activeYears }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </main>
