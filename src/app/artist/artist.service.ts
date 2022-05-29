@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Artwork } from '../artwork/Artwork';
 import { ArtistDetail } from './artist-detail';
 
 @Injectable({
@@ -16,6 +17,12 @@ export class ArtistService {
     getArtists(): Observable<ArtistDetail[]> {
       console.log(this.apiUrl)
       return this.http.get<ArtistDetail[]>(this.apiUrl);
+    }
+
+    getArtworks(artist: any): Observable<Artwork[]> {
+      console.log(this.apiUrl)
+      let urn = "/"+artist+"/artworks/"
+      return this.http.get<Artwork[]>(this.apiUrl+urn);
     }
 
 }

@@ -8,6 +8,7 @@ import { ArtworkListComponent } from './artwork-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtworkService } from '../artwork.service';
 import { Artwork } from '../Artwork';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ArtworkListComponent', () => {
   let component: ArtworkListComponent;
@@ -16,7 +17,7 @@ describe('ArtworkListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, RouterTestingModule.withRoutes([])],
       declarations: [ ArtworkListComponent ],
       providers: [ ArtworkService ]
     })

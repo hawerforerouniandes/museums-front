@@ -8,8 +8,17 @@ const routes: Routes = [
     component: ArtistListComponent,
   },
   {
+    path: 'list',
+    component: ArtistListComponent,
+  },
+  {
     path: ':id',
     component: ArtistDetailComponent
+  },
+  {
+    path: ':id/artworks',
+    loadChildren: () =>
+      import('../artwork/artwork.module').then((m) => m.ArtworkModule)
   }
 ];
 
