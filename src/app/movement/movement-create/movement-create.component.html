@@ -1,0 +1,124 @@
+<!-- Modal -->
+<div>
+  <div class="modal-dialog">
+    <form [formGroup]="movementForm" (ngSubmit)="!movementForm.invalid && createMovement(movementForm.value)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create new movement</h5>
+      </div>
+      <div class="modal-body">
+          <!--Name-->
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="name">Name</label>
+            <input
+              novalidate
+              id="name"
+              class="form-control"
+              formControlName="name"
+              placeholder="Author's name"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="
+              movementForm.get('name')!.hasError('required') &&
+              movementForm.get('name')!.touched
+              "
+            >
+              Name required
+            </div>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="movementForm.get('name')!.hasError('minlength')"
+            >
+              Name too short
+            </div>
+          </div>
+
+            <!--Description-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="description">Description</label>
+              <input
+                novalidate
+                id="description"
+                class="form-control"
+                formControlName="description"
+                placeholder="Author's short description"
+              />
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                movementForm.get('description')!.hasError('required') &&
+                movementForm.get('description')!.touched
+                "
+              >
+                Description required
+              </div>
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="movementForm.get('description')!.hasError('maxlength')"
+              >
+                Description too long
+              </div>
+            </div>
+
+            <!--countryOfOrigin-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="countryOfOrigin">Country of origin</label>
+              <input
+                novalidate
+                id="countryOfOrigin"
+                class="form-control"
+                formControlName="countryOfOrigin"
+                placeholder="countryOfOrigin"
+              />
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                  movementForm.get('countryOfOrigin')!.hasError('required') &&
+                  movementForm.get('countryOfOrigin')!.touched
+                "
+              >
+              countryOfOrigin required
+              </div>
+            </div>
+
+            <!--activeYears-->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="activeYears">Active years</label>
+              <input
+                novalidate
+                id="activeYears"
+                class="form-control"
+                formControlName="activeYears"
+                placeholder="activeYears"
+              />
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="
+                  movementForm.get('activeYears')!.hasError('required') &&
+                  movementForm.get('activeYears')!.touched
+                "
+              >
+              activeYears required
+              </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="cancelCreation()">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!movementForm.valid">
+          Create
+        </button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+

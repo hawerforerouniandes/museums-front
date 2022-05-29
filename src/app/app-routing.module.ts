@@ -21,6 +21,11 @@ const routes: Routes = [
     path: 'sponsors',
     loadChildren: () =>
       import('./sponsor/sponsor.module').then((m) => m.SponsorModule)
+  },
+  {
+    path: 'movements',
+    loadChildren: () =>
+      import('./movement/movement.module').then((m) => m.MovementModule)
   }
 ];
 

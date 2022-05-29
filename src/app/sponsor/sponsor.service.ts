@@ -11,7 +11,6 @@ export class SponsorService {
 
 private apiUrl: string = environment.baseUrl + 'sponsors';
 
-
 constructor(private http: HttpClient) { }
 
   getSponsors(): Observable<Sponsor[]> {
