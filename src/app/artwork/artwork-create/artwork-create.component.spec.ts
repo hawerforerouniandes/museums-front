@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ArtworkCreateComponent } from './artwork-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ArtworkCreateComponent', () => {
   let component: ArtworkCreateComponent;
@@ -11,7 +15,8 @@ describe('ArtworkCreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArtworkCreateComponent ]
+      imports: [ReactiveFormsModule, ToastrModule.forRoot(), HttpClientModule, RouterTestingModule],
+      declarations: [ArtworkCreateComponent],
     })
     .compileComponents();
   }));

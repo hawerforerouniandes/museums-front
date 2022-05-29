@@ -20,13 +20,16 @@
             </li>
         </ul>
         <br/>
+        <h3>Obras de arte</h3>
         <ng-container *ngIf="artistId; then pathRecoveredId; else notPathRecoveredId">
         </ng-container>
         <ng-template #pathRecoveredId>
-            <a class="btn btn-primary" routerLink="artworks">Open artworks</a>
+            <a class="btn btn-primary" routerLink="artworks">Ver obras</a>
+            <a class="btn btn-primary" routerLink="artworks/create">Agregar</a>
         </ng-template>
         <ng-template #notPathRecoveredId>
-            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks">Open artworks</a>
+            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks">Ver obras</a>
+            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks/create">Agregar</a>
         </ng-template>
     </div>
 </div>

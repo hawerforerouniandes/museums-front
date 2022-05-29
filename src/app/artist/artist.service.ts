@@ -21,14 +21,17 @@ export class ArtistService {
   }
 
   getArtists(): Observable<ArtistDetail[]> {
-    console.log(this.apiUrl)
     return this.http.get<ArtistDetail[]>(this.apiUrl);
   }
 
   getArtworks(artistId: any): Observable<Artwork[]> {
-    console.log(this.apiUrl)
-    let urn = "/"+artistId+"/artworks/"
+    let urn = "/"+artistId+"/artworks"
     return this.http.get<Artwork[]>(this.apiUrl+urn);
+  }
+
+  createArtwork(artistId: Number, artwork: Artwork): Observable<Artwork> {
+    let urn = "/"+artistId+"/artworks"
+    return this.http.post<Artwork>(this.apiUrl+urn, artwork)
   }
 
   create(artist: Artist): Observable<Artist>{

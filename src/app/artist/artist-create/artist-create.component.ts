@@ -17,27 +17,27 @@ export class ArtistCreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private artistService: ArtistService
-  ) { }
+    ) { }
 
-  createArtist(artist: Artist) {
-    this.artistService.create(artist).subscribe(artist =>{
-      console.info("The artist was created:", artist);
-      this.toastr.success("Confirmation", "Author created");
+    createArtist(artist: Artist) {
+      this.artistService.create(artist).subscribe(artist => {
+        console.info("The artist was created:", artist);
+        this.toastr.success("Confirmation", "Author created");
+        this.artistForm.reset();
+      });
+    }
+
+    cancelCreation(){
       this.artistForm.reset();
-    });
-  }
+    }
 
-  cancelCreation(){
-    this.artistForm.reset();
-  }
+    ngOnInit() {
+      this.artistForm = this.formBuilder.group({
+        name: ["", [Validators.required, Validators.minLength(5)]],
+        birthplace: ["", Validators.required],
+        birthdate:["", Validators.required],
+        image: ["", [Validators.required]],
+      });
+    }
 
-  ngOnInit() {
-    this.artistForm = this.formBuilder.group({
-      name: ["", [Validators.required, Validators.minLength(5)]],
-      birthplace: ["", Validators.required],
-      birthdate:["", Validators.required],
-      image: ["", [Validators.required]],
-    });
   }
-
-}
