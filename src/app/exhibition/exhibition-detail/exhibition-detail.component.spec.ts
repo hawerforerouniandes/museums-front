@@ -32,6 +32,8 @@ describe('ExhibitionDetailComponent', () => {
     fixture = TestBed.createComponent(ExhibitionDetailComponent);
     component = fixture.componentInstance;
 
+    component.artworks = [];
+
     component.exhibition = new Exhibition(
       faker.datatype.number(),
       faker.name.jobTitle(),
@@ -42,8 +44,9 @@ describe('ExhibitionDetailComponent', () => {
         faker.name.jobDescriptor(),
         faker.name.jobType(),
       ),
-      []
+      component.artworks
     );
+
 
 
     fixture.detectChanges();
@@ -55,9 +58,14 @@ describe('ExhibitionDetailComponent', () => {
   });
 
   it('should have an titulo element ', () => {
-
     expect(debug.query(By.css('.h3.p-3')).nativeElement.textContent).toEqual(
       component.exhibition.name
+    );
+  });
+
+  it('should have an description element ', () => {
+    expect(debug.query(By.css('dd')).nativeElement.textContent).toEqual(
+      component.exhibition.description
     );
   });
 
