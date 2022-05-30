@@ -28,6 +28,7 @@ describe('ExhibitionListComponent', () => {
   });
 
   it('should create', () => {
+    //expect
     expect(component).toBeTruthy();
   });
 });
