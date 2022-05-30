@@ -13,10 +13,6 @@ export class ArtworkService {
   private apiUrl: string = environment.baseUrl + 'artworks';
   constructor(private http: HttpClient) { }
 
-  getArtworks(): Observable<Artwork[]> {
-    return this.http.get<Artwork[]>(this.apiUrl);
-  }
-
   getArtwork(id: number): Observable<ArtworkDetail> {
     let url = `${this.apiUrl}/${id}`;
     return this.http.get<ArtworkDetail>(url);
