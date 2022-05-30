@@ -1,62 +1,73 @@
-<div class="container mt-4">
-    <h2 class="text-center">Crear un nuevo artista</h2>
+
+<!-- Modal -->
+<div>
+  <div class="modal-dialog">
     <form [formGroup]="artistForm" (ngSubmit)="!artistForm.invalid && createArtist(artistForm.value)">
-        <!--Name-->
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Create a new artist</h5>
+      </div>
+      <div class="modal-body">
+          <!--Name-->
         <div class="form-group mx-sm-3 mb-2">
-            <label for="name">Name</label>
-            <input novalidate id="name" class="form-control" formControlName="name" placeholder="Nombre del artista" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-          artistForm.get('name')!.hasError('required') &&
-          artistForm.get('name')!.touched
-        ">
-                Name required
-            </div>
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="artistForm.get('name')!.hasError('minlength')">
-                Name too short
-            </div>
-        </div>
-
-        <!--Image-->
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="image">Image</label>
-            <input novalidate id="image" class="form-control" formControlName="image" placeholder="URL with Author's image" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-          artistForm.get('image')!.hasError('required') &&
-          artistForm.get('image')!.touched
-        ">
-                Image required
-            </div>
-        </div>
-
-        <!--Birth Place-->
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="birthplace">Birth place</label>
-            <input novalidate id="birthplace" class="form-control" formControlName="birthplace" placeholder="Author's birth date" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-          artistForm.get('birthplace')!.hasError('required') &&
-          artistForm.get('birthplace')!.touched
-        ">
-                Birth place required
-            </div>
-        </div>
-
-        <!--Birth Date-->
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="birthdate">Birth date</label>
-            <input novalidate id="birthdate" class="form-control" formControlName="birthdate" placeholder="Author's birth date" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-        artistForm.get('birthdate')!.hasError('required') &&
-        artistForm.get('birthdate')!.touched
+          <label for="name" i18n>Name</label>
+          <input novalidate id="name" class="form-control" formControlName="name" placeholder="Nombre del artista" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+        artistForm.get('name')!.hasError('required') &&
+        artistForm.get('name')!.touched
       ">
-                Birth date required
-            </div>
-        </div>
+              Name required
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="artistForm.get('name')!.hasError('minlength')">
+              Name too short
+          </div>
+      </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!artistForm.valid">
-      Create
-    </button>
-        <button type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">
-      Cancel
-    </button>
-    </form>
+      <!--Image-->
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="image" i18n>Image</label>
+          <input novalidate id="image" class="form-control" formControlName="image" placeholder="URL with Author's image" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+        artistForm.get('image')!.hasError('required') &&
+        artistForm.get('image')!.touched
+      ">
+              Image required
+          </div>
+      </div>
+
+      <!--Birth Place-->
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="birthplace" i18n>Birth place</label>
+          <input novalidate id="birthplace" class="form-control" formControlName="birthplace" placeholder="Author's birth date" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+        artistForm.get('birthplace')!.hasError('required') &&
+        artistForm.get('birthplace')!.touched
+      ">
+              Birth place required
+          </div>
+      </div>
+
+      <!--Birth Date-->
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="birthdate" i18n>Birth date</label>
+          <input novalidate id="birthdate" class="form-control" formControlName="birthdate" placeholder="Author's birth date" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+      artistForm.get('birthdate')!.hasError('required') &&
+      artistForm.get('birthdate')!.touched
+    ">
+              Birth date required
+          </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!artistForm.valid" i18n>
+          Create
+        </button>
+            <button type="button" class="btn btn-danger ml-3" (click)="cancelCreation()" i18n>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+  </div>
 </div>

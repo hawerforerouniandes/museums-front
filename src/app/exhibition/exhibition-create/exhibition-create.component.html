@@ -4,12 +4,12 @@
     <form [formGroup]="exhibitionForm" (ngSubmit)="!exhibitionForm.invalid && createExhibition(exhibitionForm.value)">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create a new exhibition</h5>
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Create a new exhibition</h5>
       </div>
       <div class="modal-body">
           <!--Name-->
           <div class="form-group mx-sm-3 mb-2">
-            <label for="name">Name</label>
+            <label for="name" i18n>Name</label>
             <input
               novalidate
               id="name"
@@ -36,7 +36,7 @@
 
             <!--Description-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="description">Description</label>
+              <label for="description" i18n>Description</label>
               <input
                 novalidate
                 id="description"
@@ -63,7 +63,7 @@
 
             <!--sponsor-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="description">Sponsor</label>
+              <label for="description" i18n>Sponsor</label>
               <select formControlName="sponsor" class="form-control" >
                 <option *ngFor="let sponsor of sponsors" [ngValue]="sponsor">
                   {{ sponsor.name }}
@@ -88,13 +88,13 @@
         <button
           type="button"
           class="btn btn-danger"
-          (click)="cancelCreation()">
+          (click)="cancelCreation()" i18n>
           Cancel
         </button>
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="!exhibitionForm.valid">
+          [disabled]="!exhibitionForm.valid" i18n>
           Create
         </button>
       </div>

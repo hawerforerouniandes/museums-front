@@ -8,14 +8,14 @@
         </div>
         <div class="col">
             <dl>
-                <dt class="bold">Descripción</dt>
+                <dt class="bold" i18n>Descripción</dt>
                 <dd>{{ exhibition.description }}</dd>
             </dl>
             <dl>
-                <dt class="bold">Artworkws</dt>
+                <dt class="bold" i18n>Artworkws</dt>
                 <dt>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="openModal()">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="openModal()" i18n>
                   Add atwork
                 </button>
               </dt>
@@ -46,7 +46,7 @@
             <div class="modal-body">
                 <!--artwork-->
                 <div class="form-group mx-sm-3 mb-2">
-                    <label for="description">Artwork</label>
+                    <label for="description" i18n>Artwork</label>
                     <select formControlName="artwork" class="form-control">
             <option *ngFor="let artwork of artworks" [ngValue]="artwork.id">
               {{ artwork.name }}
@@ -62,10 +62,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" (click)="modal.close()">
+                <button type="button" class="btn btn-danger" (click)="modal.close()" i18n>
           Cancel
         </button>
-                <button type="submit" class="btn btn-primary" [disabled]="!artworkForm.valid">
+                <button type="submit" class="btn btn-primary" [disabled]="!artworkForm.valid" i18n>
           Create
         </button>
             </div>

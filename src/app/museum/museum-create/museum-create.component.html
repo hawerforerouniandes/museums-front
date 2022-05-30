@@ -4,12 +4,12 @@
     <form [formGroup]="museumForm" (ngSubmit)="!museumForm.invalid && createMuseum(museumForm.value)">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create a new museum</h5>
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Create a new museum</h5>
       </div>
       <div class="modal-body">
           <!--Name-->
           <div class="form-group mx-sm-3 mb-2">
-            <label for="name">Name</label>
+            <label for="name" i18n>Name</label>
             <input
               novalidate
               id="name"
@@ -36,7 +36,7 @@
 
             <!--Description-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="description">Description</label>
+              <label for="description" i18n>Description</label>
               <input
                 novalidate
                 id="description"
@@ -63,7 +63,7 @@
 
             <!--address-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="address">Address</label>
+              <label for="address" i18n>Address</label>
               <input
                 novalidate
                 id="address"
@@ -90,7 +90,7 @@
 
             <!--city-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="city">City</label>
+              <label for="city" i18n>City</label>
               <input
                 novalidate
                 id="city"
@@ -117,7 +117,7 @@
 
           <!--Image-->
           <div class="form-group mx-sm-3 mb-2">
-            <label for="image">Image</label>
+            <label for="image" i18n>Image</label>
             <input
               novalidate
               id="image"
@@ -140,13 +140,13 @@
         <button
           type="button"
           class="btn btn-danger"
-          (click)="cancelCreation()">
+          (click)="cancelCreation()" i18n>
           Cancel
         </button>
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="!museumForm.valid">
+          [disabled]="!museumForm.valid" i18n>
           Create
         </button>
       </div>

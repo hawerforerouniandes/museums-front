@@ -4,15 +4,15 @@
         <img src="{{ artistDetail?.image }}" alt="{{artistDetail?.name}} image">
     </div>
     <div class="col">
-        <h3>
-            Lugar de nacimiento
+        <h3 i18n>
+          Birth place
         </h3>
         <p>{{artistDetail?.birthplace}}</p>
-        <h3>
-            Fecha de nacimiento
+        <h3 i18n>
+          Birth date
         </h3>
         <p>{{artistDetail?.birthdate}}</p>
-        <h3>Movimientos</h3>
+        <h3 i18n>Movements</h3>
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let movement of artistDetail?.movements">
                 {{movement.name}}
@@ -20,16 +20,16 @@
             </li>
         </ul>
         <br/>
-        <h3>Obras de arte</h3>
+        <h3 i18n>Artworks</h3>
         <ng-container *ngIf="artistId; then pathRecoveredId; else notPathRecoveredId">
         </ng-container>
         <ng-template #pathRecoveredId>
-            <a class="btn btn-primary" routerLink="artworks">Ver obras</a>
-            <a class="btn btn-primary" routerLink="artworks/create">Agregar</a>
+            <a class="btn btn-primary" routerLink="artworks" i18n>Open artworks</a>
+            <a class="btn btn-primary" routerLink="artworks/create" i18n>Add artwork</a>
         </ng-template>
         <ng-template #notPathRecoveredId>
-            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks">Ver obras</a>
-            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks/create">Agregar</a>
+            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks" i18n>Open artworks</a>&nbsp;&nbsp;
+            <a class="btn btn-primary" routerLink="{{ artistDetail?.id }}/artworks/create" i18n>Add artwork</a>
         </ng-template>
     </div>
 </div>

@@ -4,16 +4,17 @@
         <img src="{{ artworkDetail?.mainImage }}" alt="{{artworkDetail?.name}} image">
     </div>
     <div class="col">
-        <h3>
-            Año
+        <h3 i18n>
+          Year
         </h3>
         <p>{{artworkDetail?.year}}</p>
-        <h3>
-            Descripción
+        <h3 i18n>
+          Description
         </h3>
         <p>{{artworkDetail?.description}}</p>
-        <a *ngIf="artistId" class="btn btn-primary" routerLink="/artists/{{ artistId }}">Detalles de artista</a>
-        <h3>Imagenes <a class="btn btn-primary" routerLink="/artists/{{ artistId }}/artworks/{{ artworkDetail?.id }}/images">Agregar</a></h3>
+        <a *ngIf="artistId" class="btn btn-primary" routerLink="/artists/{{ artistId }}" i18n>Artist details</a>
+        <h3 i18n>Images</h3>
+        <a class="btn btn-primary" routerLink="/artists/{{ artistId }}/artworks/{{ artworkDetail?.id }}/images" i18n>Add image</a>
         <app-image-list [images]="artworkImages"></app-image-list>
         <br/>
     </div>

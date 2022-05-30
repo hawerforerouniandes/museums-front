@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Artist } from '../Artist';
 import { ArtistService } from '../artist.service';
@@ -16,7 +17,8 @@ export class ArtistCreateComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private artistService: ArtistService
+    private artistService: ArtistService,
+    private router: Router
     ) { }
 
     createArtist(artist: Artist) {
@@ -24,11 +26,13 @@ export class ArtistCreateComponent implements OnInit {
         console.info("The artist was created:", artist);
         this.toastr.success("Confirmation", "Author created");
         this.artistForm.reset();
+        this.router.navigate(['/artists']);
       });
     }
 
     cancelCreation(){
       this.artistForm.reset();
+      this.router.navigate(['/artists']);
     }
 
     ngOnInit() {

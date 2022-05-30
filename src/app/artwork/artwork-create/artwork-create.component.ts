@@ -30,11 +30,13 @@ export class ArtworkCreateComponent implements OnInit {
         console.info("The artwork was created:", artwork);
         this.toastr.success("Confirmation", "Artwork created");
         this.artworkForm.reset();
+        this.router.navigate(['/artists/'+this.artistId+'/artworks']);
       });
     }
 
     cancelCreation(){
       this.artworkForm.reset();
+      this.router.navigate(['/artists/'+this.artistId+'/artworks']);
     }
 
     ngOnInit() {

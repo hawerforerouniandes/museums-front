@@ -1,5 +1,13 @@
 <div class="container-fluid" [ngClass]="selectedArtist ? '': 'col mb-2'">
-    <h2>Listado de artistas <a class="btn btn-primary" routerLink="create">Agregar</a></h2>
+    <hr />
+    <h2 i18n>List of artists</h2>
+    <hr />
+    <div class="row">
+      <div class="col-md-offset-10 col-md-12">
+        <a class="btn btn-primary" routerLink="create" i18n>New artist</a>
+      </div>
+    </div>
+    <br/>
     <div class="row">
         <ng-container *ngIf="selectedArtist; then selectedArtistLayout; else notSelectedArtistLayout">
         </ng-container>

@@ -4,12 +4,12 @@
     <form [formGroup]="movementForm" (ngSubmit)="!movementForm.invalid && createMovement(movementForm.value)">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create new movement</h5>
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Create new movement</h5>
       </div>
       <div class="modal-body">
           <!--Name-->
           <div class="form-group mx-sm-3 mb-2">
-            <label for="name">Name</label>
+            <label for="name" i18n>Name</label>
             <input
               novalidate
               id="name"
@@ -36,7 +36,7 @@
 
             <!--Description-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="description">Description</label>
+              <label for="description" i18n>Description</label>
               <input
                 novalidate
                 id="description"
@@ -63,7 +63,7 @@
 
             <!--countryOfOrigin-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="countryOfOrigin">Country of origin</label>
+              <label for="countryOfOrigin" i18n>Country of origin</label>
               <input
                 novalidate
                 id="countryOfOrigin"
@@ -84,7 +84,7 @@
 
             <!--activeYears-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="activeYears">Active years</label>
+              <label for="activeYears" i18n>Active years</label>
               <input
                 novalidate
                 id="activeYears"
@@ -107,13 +107,13 @@
         <button
           type="button"
           class="btn btn-danger"
-          (click)="cancelCreation()">
+          (click)="cancelCreation()" i18n>
           Cancel
         </button>
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="!movementForm.valid">
+          [disabled]="!movementForm.valid" i18n>
           Create
         </button>
       </div>

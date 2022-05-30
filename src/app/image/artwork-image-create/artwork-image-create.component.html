@@ -1,58 +1,68 @@
-<div class="container mt-4">
-    <h2 class="text-center">Crear una nueva obra de arte</h2>
+<!-- Modal -->
+<div>
+  <div class="modal-dialog">
     <form [formGroup]="imageForm" (ngSubmit)="!imageForm.invalid && create(imageForm.value)">
-        <!--Name-->
+      <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Create a new image</h5>
+      </div>
+      <div class="modal-body">
+          <!--Name-->
         <div class="form-group mx-sm-3 mb-2">
-            <label for="width">Ancho de imagen</label>
-            <input novalidate id="width" class="form-control" formControlName="width" placeholder="Ancho de imagen" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-      imageForm.get('width')!.hasError('required') &&
-      imageForm.get('width')!.touched
-    ">
-                Ancho de la imagen es requerido
-            </div>
-        </div>
-        <!--height-->
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="height">Alto</label>
-            <input novalidate id="height" class="form-control" formControlName="height" placeholder="Alto de imagen" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-      imageForm.get('height')!.hasError('required') &&
-      imageForm.get('height')!.touched
-    ">
-                Alto de imagen es requerido
-            </div>
-        </div>
-
-        <!--altText-->
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="altText">Texto alternativo</label>
-            <input novalidate id="altText" class="form-control" formControlName="altText" placeholder="Texto alternativo" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-    imageForm.get('altText')!.hasError('required') &&
-    imageForm.get('altText')!.touched
+          <label for="width" i18n>Width</label>
+          <input novalidate id="width" class="form-control" formControlName="width" placeholder="Ancho de imagen" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+    imageForm.get('width')!.hasError('required') &&
+    imageForm.get('width')!.touched
   ">
-                Texto alternativo para imagen es requerido
-            </div>
-        </div>
-
-        <!--Source-->
-        <div class="form-group mx-sm-3 mb-2">
-            <label for="source">Ruta a la imagen</label>
-            <input novalidate id="source" class="form-control" formControlName="source" placeholder="Tipo de obra" />
-            <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-    imageForm.get('source')!.hasError('required') &&
-    imageForm.get('source')!.touched
+          Width required
+          </div>
+      </div>
+      <!--height-->
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="height" i18n>Height</label>
+          <input novalidate id="height" class="form-control" formControlName="height" placeholder="Alto de imagen" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+    imageForm.get('height')!.hasError('required') &&
+    imageForm.get('height')!.touched
   ">
-                Url a la imagen es requerida
-            </div>
-        </div>
+          Height required
+          </div>
+      </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!imageForm.valid">
-  Create
-</button>
-        <button type="button" class="btn btn-danger ml-3" (click)="cancel()">
-  Cancel
-</button>
-    </form>
+      <!--altText-->
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="altText" i18n>Alt text</label>
+          <input novalidate id="altText" class="form-control" formControlName="altText" placeholder="Texto alternativo" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+  imageForm.get('altText')!.hasError('required') &&
+  imageForm.get('altText')!.touched
+">
+              Alt text required
+          </div>
+      </div>
+
+      <!--Source-->
+      <div class="form-group mx-sm-3 mb-2">
+          <label for="source" i18n>Source</label>
+          <input novalidate id="source" class="form-control" formControlName="source" placeholder="Tipo de obra" />
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+  imageForm.get('source')!.hasError('required') &&
+  imageForm.get('source')!.touched
+">
+          Source required
+          </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!imageForm.valid" i18n>
+          Create
+        </button>
+                <button type="button" class="btn btn-danger ml-3" (click)="cancel()" i18n>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+  </div>
 </div>

@@ -12,16 +12,16 @@
     </div>
     <div class="col">
       <dl>
-        <dt>Adress</dt>
+        <dt i18n>Adress</dt>
           {{ museum.address }}
 
-        <dt>City</dt>
+        <dt i18n>City</dt>
         <dd>{{ museum.city }}</dd>
         <hr />
-        <dt class="bold">Exhibitions</dt>
-        <a class="btn btn-primary" href="museums/{{ museum.id }}/exhibitions">Open exhibitions</a>
+        <dt class="bold" i18n>Exhibitions</dt>
+        <a class="btn btn-primary" href="museums/{{ museum.id }}/exhibitions" i18n>Open exhibitions</a>
         <hr />
-        <dt class="bold">Description</dt>
+        <dt class="bold" i18n>Description</dt>
         <dd>{{ museum.description }}</dd>
       </dl>
     </div>

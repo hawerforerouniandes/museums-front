@@ -1,5 +1,7 @@
 <div class="container-fluid" [ngClass]="selectedArtwork ? '': 'col mb-2'">
-    <h2>Listado de obras de arte</h2>
+    <hr />
+    <h2 i18n>List of artworks</h2>
+    <hr />
     <div class="row">
         <ng-container *ngIf="selectedArtwork; then selectedArtworkLayout; else notSelectedArtworkLayout">
         </ng-container>

@@ -4,12 +4,12 @@
     <form [formGroup]="sponsorForm" (ngSubmit)="!sponsorForm.invalid && createSponsor(sponsorForm.value)">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create new sponsor</h5>
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Create new sponsor</h5>
       </div>
       <div class="modal-body">
           <!--Name-->
           <div class="form-group mx-sm-3 mb-2">
-            <label for="name">Name</label>
+            <label for="name" i18n>Name</label>
             <input
               novalidate
               id="name"
@@ -36,7 +36,7 @@
 
             <!--Description-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="description">Description</label>
+              <label for="description" i18n>Description</label>
               <input
                 novalidate
                 id="description"
@@ -63,7 +63,7 @@
 
             <!--website-->
             <div class="form-group mx-sm-3 mb-2">
-              <label for="address">Website</label>
+              <label for="address" i18n>Website</label>
               <input
                 novalidate
                 id="website"
@@ -86,13 +86,13 @@
         <button
           type="button"
           class="btn btn-danger"
-          (click)="cancelCreation()">
+          (click)="cancelCreation()" i18n>
           Cancel
         </button>
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="!sponsorForm.valid">
+          [disabled]="!sponsorForm.valid" i18n>
           Create
         </button>
       </div>
