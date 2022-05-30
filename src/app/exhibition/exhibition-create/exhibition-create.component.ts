@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Sponsor } from 'src/app/sponsor/sponsor';
+import { SponsorDetail } from 'src/app/sponsor/sponsor-detail';
 import { SponsorService } from 'src/app/sponsor/sponsor.service';
 import { Exhibition } from '../exhibition';
 import { ExhibitionService } from '../exhibition.service';
@@ -16,7 +17,7 @@ export class ExhibitionCreateComponent implements OnInit {
 
   exhibitionForm!: FormGroup;
   idMuseum: number = 0;
-  sponsors: Array<Sponsor> = [];
+  sponsors: Array<SponsorDetail> = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,7 +42,7 @@ export class ExhibitionCreateComponent implements OnInit {
   }
 
   getSponsors(): void {
-    this.sponsorService.getSponsors()
+    this.sponsorService.getSponsorsDetail()
     .subscribe((sponsors) => {
 
       sponsors.forEach(sponsor => {
