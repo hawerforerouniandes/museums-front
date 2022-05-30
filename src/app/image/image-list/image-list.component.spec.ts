@@ -32,20 +32,28 @@ describe('ImageListComponent', () => {
         faker.hacker.ingverb(),
         320,
         400
-      )
-    ];
+        )
+      ];
 
-    fixture.detectChanges();
-    debug = fixture.debugElement;
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should have an img element ', () => {
-    expect(debug.query(By.css('img')).attributes['alt']).toEqual(
-      component.images[0].altText
-      );
+      fixture.detectChanges();
+      debug = fixture.debugElement;
     });
-  });
+
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+
+    it('should have an img element ', () => {
+      expect(debug.query(By.css('img')).attributes['alt']).toEqual(
+        component.images[0].altText
+        );
+      });
+
+      it('should have an img element ', () => {
+        component.artistId = 100;
+        component.artworkId = 100;
+        expect(debug.query(By.css('img')).attributes['alt']).toEqual(
+          component.images[0].altText
+          );
+        });
+      });
