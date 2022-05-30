@@ -16,7 +16,7 @@ describe('Service: ArtworkImage', () => {
       imports: [HttpClientTestingModule],
       providers: [ArtworkImageService]
     });
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get', 'post']);
     service = new ArtworkImageService(httpClientSpy);
   });
 
@@ -48,4 +48,26 @@ describe('Service: ArtworkImage', () => {
       error: done.fail
     });
   });
-});
+
+  it('#create image should return created image', (done: DoneFn) => {
+    const expectedImage: ArtworkImage = new ArtworkImage(
+      faker.random.number(),
+      faker.image.fashion(),
+      faker.hacker.ingverb(),
+      320,
+      400
+      );
+
+      httpClientSpy.post.and.returnValue(of(expectedImage));
+
+      service.create(100, 100, expectedImage).subscribe({
+        next: image => {
+          expect(image)
+          .withContext('expected created image')
+          .toEqual(expectedImage);
+          done();
+        },
+        error: done.fail
+      });
+    });
+  });
